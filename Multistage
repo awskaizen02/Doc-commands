@@ -1,0 +1,6 @@
+FROM maven AS builder
+COPY demo /app
+WORKDIR /app
+RUN mvn install
+FROM tomcat
+COPY --from=builder /app/target/my-app.war  /usr/local/tomcat/webapps/
