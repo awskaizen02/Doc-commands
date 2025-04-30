@@ -37,18 +37,20 @@ sudo ./aws/install
 ** sudo mv /tmp/eksctl /usr/local/bin
 
 **  eksctl version
-
+```
 eksctl create cluster --name <cluster_name> \
 --region <region_name> \
 --node-type <instance_type> \
 --node-min <count> \
 --nnode-max <max> \
 --zones <az-1a>,<az-1b>
+```
 
-
-
+```
 eksctl create cluster --name kaizen --region ap-south-1  --node-type t2.medium --zones ap-south-1a,ap-south-1b
+```
 
+```
 ---
 apiVersion: v1
 kind: Pod
@@ -62,20 +64,20 @@ spec:
       image: dockerpandian/tomcat:1
       ports:
        - containerPort: 8080
-
+````
 eksctl delete cluster --name kaizen --region ap-south-1 
 
 
 # https://kubernetes.io/docs/reference/generated/kubernetes-api
 
 Kind: resources [pod,services,namespaces,nodes,secrets,configmap..]
-
+```
 pod(v1)		: the smallest deployment units in k8s, running one or morecontainers	
 deployments(apps/v1) : mange statless applications, ensuring replica counts
 stsefulsets(apps/v1) : manage stategul applications with stable n/w identities
 DaemoSets(app/v1)    : ensure pod running one every nodes
 job/cronjobs(btach/v1): scheduled tasks 
-
+```
 
 
 # https://kubernetes.io/docs/concepts/services-networking/service/
