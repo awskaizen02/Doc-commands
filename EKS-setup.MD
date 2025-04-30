@@ -81,7 +81,7 @@ job/cronjobs(btach/v1): scheduled tasks
 
 
 # https://kubernetes.io/docs/concepts/services-networking/service/
-
+```
 ---
 apiVerrsion: v1
 kind: Service
@@ -95,16 +95,16 @@ spec:
   - port:80
     targetPort:8080
     nodePort: 30070
+```
 
-
-
+```
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: kaizen-ns
-
-
+```
+```
 ---
 apiVersion: v1
 kind: Pod
@@ -119,7 +119,8 @@ spec:
       image: dockerpandian/tomcat:1
       ports:
        - containerPort: 8080
-
+```
+```
 ---
 apiVerrsion: v1
 kind: Service
@@ -134,5 +135,5 @@ spec:
   - port:80
     targetPort:8080
     nodePort: 30070
-
+```
 
