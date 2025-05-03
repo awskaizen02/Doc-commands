@@ -13,6 +13,7 @@ WHAT IS POD
 * can create multiple PODS on single node
 * Every POD will have unique IP address
 
+
 * we can create PODs in 2 ways
 	* Interactive Approach
 * kubectl run --name<pod-name> image=<image-name> --generate=pod/v1
