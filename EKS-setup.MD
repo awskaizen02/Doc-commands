@@ -3,11 +3,11 @@
 * attach iam role into ec2-instance
 
 login to the ec2 instace and install aws cli
-
+```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-
+```
 
 
 # kubectl ## https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
