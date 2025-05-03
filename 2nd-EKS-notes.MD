@@ -5,13 +5,13 @@ eksctl create cluster --name kaizen --region ap-south-1  --node-type t2.medium -
 WHAT IS POD
 -----------
 
-POD is a smllest building block in k8s cluster
-in k8s, every container will be created inside POD only
-POS always runs inside node [ worker-nodes]
-POD represents running process
-POD means group of containers running on a node
-can create multiple PODS on single node
-Every POD will have unique IP address
+* POD is a smllest building block in k8s cluster
+* in k8s, every container will be created inside POD only
+* POS always runs inside node [ worker-nodes]
+* POD represents running process
+* POD means group of containers running on a node
+* can create multiple PODS on single node
+* Every POD will have unique IP address
 
 we can create PODs in 2 ways
 	* Interactive Approach
