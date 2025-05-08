@@ -20,6 +20,7 @@ NODE-Port:
 
 Node-port range = 30000 - 32767
 
+```
 ---
 apiVersion: v1
 kind: Pod
@@ -33,7 +34,8 @@ spec:
     image: dockerpandian/tomcat:1
     ports:
      - containerPort: 8080
-
+```
+```
 ---
 apiVersion: v1
 kind: Service
@@ -46,13 +48,13 @@ spec:
   ports:
    - port: 80
      targetPort: 8080
-
+```
 LoadBalancer:
 * single contact point , using LB URL we can our application
 * it  is used to expose our PODS outside cluster using LB
 * when we use LB as service type, then LB will create and managed by AWS
 * LB will distribute the traffice to multiple worker in Round Robin method.
-
+```
 ---
 apiVersion: v1
 kind: Pod
