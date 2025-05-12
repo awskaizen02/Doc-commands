@@ -80,17 +80,17 @@ both replicaset and replica controller bother work are same only different 'sele
 
 Deployment
 ----------
-	Deployment is one of the kubernetes component \n
-	Deployment is the most recommended approach to deploy application in k8s cluster \n
-	Using Deploymnet we can scale up/down our pods  \n
-	Deployment support Roll out and Roll back  \n
-	We can deploy latest code with Zero Downtime using Deployment \n
- \n
-  \n
-   \n
-Zero Downtime Deployment  \n
-Rollout and Rollback  \n
-AutoScaling  \n
+	"Deployment is one of the kubernetes component" \n
+	"Deployment is the most recommended approach to deploy application in k8s cluster" \n
+	"Using Deploymnet we can scale up/down our pods"  \n
+	"Deployment support Roll out and Roll back"  \n
+	"We can deploy latest code with Zero Downtime using Deployment" \n
+\n
+\n
+\n
+"Zero Downtime Deployment"  \n
+"Rollout and Rollback"  \n
+"AutoScaling"  \n
 
 In Deployment we have 2 stratagies  \n
 	* Recreate	 # delete all pods and create every pods in new	
