@@ -80,26 +80,24 @@ both replicaset and replica controller bother work are same only different 'sele
 
 Deployment
 ----------
-	"Deployment is one of the kubernetes component" \n
-	"Deployment is the most recommended approach to deploy application in k8s cluster" \n
-	"Using Deploymnet we can scale up/down our pods"  \n
-	"Deployment support Roll out and Roll back"  \n
-	"We can deploy latest code with Zero Downtime using Deployment" \n
-\n
-\n
-\n
-"Zero Downtime Deployment"  \n
-"Rollout and Rollback"  \n
-"AutoScaling"  \n
+	- "Deployment is one of the kubernetes component" 
+	- "Deployment is the most recommended approach to deploy application in k8s cluster" 
+	- "Using Deploymnet we can scale up/down our pods"  
+	- "Deployment support Roll out and Roll back"  
+	- "We can deploy latest code with Zero Downtime using Deployment" 
 
-In Deployment we have 2 stratagies  \n
+- "Zero Downtime Deployment"  
+- "Rollout and Rollback"  
+- "AutoScaling"  
+
+- In Deployment we have 2 stratagies  
 	* Recreate	 # delete all pods and create every pods in new	
 	* Rolling update # delete pods one by one cand create new pods
 
 
 
 
-## Failed Deployment  \n
+## Failed Deployment  
  \n
   \n
 Your Deployment may get stuck trying to deploy its newest ReplicaSet without ever completing. This can occur due to some of the following factors:
