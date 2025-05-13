@@ -80,7 +80,7 @@ both replicaset and replica controller bother work are same only different 'sele
 
 Deployment
 ----------
-	- "Deployment is one of the kubernetes component" 
+	... "Deployment is one of the kubernetes component" 
 	- "Deployment is the most recommended approach to deploy application in k8s cluster" 
 	- "Using Deploymnet we can scale up/down our pods"  
 	- "Deployment support Roll out and Roll back"  
