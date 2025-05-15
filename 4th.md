@@ -177,7 +177,7 @@ metadata:
   name: webappbluedeployment
 spec:
   replicas: 2
-  stateregy:
+  strategy:
     type: RollingUpdate
   selector:
     matchLabels:
@@ -195,21 +195,20 @@ spec:
       containers:
       - name: webappcontainer
         image: dockerpandian/tomcat:1
-        imagePullPolicy: always
         ports:
-        - containers: 8080 
+        - containerPort: 8080 
     
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: webapp1service
 spec:
   type: NodePort
   selector:
-    version:v1
+    version: v1
   ports:
-  - ports: 80
+  - port: 80
     targetPort: 8080
     nodePort: 30555
 
