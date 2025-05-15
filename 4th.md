@@ -225,7 +225,7 @@ metadata:
   name: webappgreendeployment
 spec:
   replicas: 2
-  stateregy:
+  strategy:
     type: RollingUpdate
   selector:
     matchLabels:
@@ -242,23 +242,22 @@ spec:
     spec:
       containers:
       - name: webappcontainer
-        image: dockerpandian/tomcat:1
-        imagePullPolicy: always
+        image: dockerpandian/tomcat:2
         ports:
-        - containers: 8080 
+        - containerPort: 3000
     
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
-  name: webapp2service
+  name: webapp22ervice
 spec:
   type: NodePort
   selector:
-    version:v2
+    version: v2
   ports:
-  - ports: 80
-    targetPort: 8080
-    nodePort: 30556
+  - port: 80
+    targetPort: 3000
+    nodePort: 30566
 ```
 
