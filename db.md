@@ -50,37 +50,42 @@ Environment variables for a container
 Add a file in read-only volume, for the application to read
 Write code to run inside the Pod that uses the Kubernetes API to read a ConfigMap
 
-# config-map.yaml manifest
+configmap 
+
+# https://kubernetes.io/docs/concepts/configuration/configmap/
 
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: web-db-configmap
+  name: web-config-map
   labels:
-    str: web-db-str
+    env: web-dev-cm
 data:
-  DB_DRIVER_NAME_VALUE: com.mysql.cj.jdbc.driver
-  DB_SERVICE_NAME_VALUE: web_db_service
-  DB_SCHEMA_VALUE: webapp
-  DB_PORT_VALUE: 3306
+  DB_DRIVER_NAME_VALUE: com.mysql.cj.jdbc.Driver
+  DB_SERVICE_NAME_VALUE: web-db-service
+  DB_SCHEMA_VALUE: web-bd
+  DB_PORT_VALUE: "3306"
 
 
 ## https://kubernetes.io/docs/concepts/configuration/secret/
-
-# secret.yaml
+# https://www.base64encode.org/
+secret.yml
 
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: web_db_secret
+  name: web-db-secret
   labels:
-    secret: web_db_secret
+    secret: web-db-secret
 data:
   DB_USER_NAME_VALUE: YWRtaW4=
   DB_PASSWORD_VALUE: YWRtaW4=
 type: Opaque
+
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+# https://kubernetes.io/docs/concepts/storage/storage-classes/
   
 		
 ---
