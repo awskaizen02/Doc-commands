@@ -83,61 +83,52 @@ data:
 type: Opaque
   
 		
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-db-deployment
+  name: web-db-deployment
   labels:
-    app: web-app-db
+    app: web-db
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-db-pod
   template:
     metadata:
-      labels:
-        app: web-app=db-pod
+       labels:
+         app: web-db-pod
     spec:
-     volumes:
-     - name: web-app-volume
-       persistentVolumeClaim:
-         claimName: web-db-vol
      containers:
      - name: web-app-db
        image: mysql
        ports:
        - containerPort: 3306
-       volumeMounts:
-       - name: web-app-volume
-         mountPath: /opt/mysql 
        env:
-       - name: MYSQL_ROOT_PASSWORD
+       - name:  MYSQL_ROOT_PASSWORD
          valueFrom:
-           secretkeyRef:
-             name: web-db-secrete
+           secretKeyRef:
+             name: web-db-secret
              key: DB_PASSWORD_VALUE
        - name: MYSQL_DATABASE
          valueFrom:
            configMapKeyRef:
-             name: web-db-configmap
-             key: DB_SCHEMA_VALUE
-selector:
-  matchLables:
-  app: web-app-db-pod
-replicas: 1
-
-
+             name: web-config-map
+             key: web-bd
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-app-db-service
-  labels: 
-    app: web-app-db-service
+  name: web-db-service
+  labels:
+   app: web-db-service
 spec:
   type: ClusterIP
   ports:
-  - ports: 3306
+  - port: 3306
     targetPort: 3306
   selector:
-    app: web-app-db-pod
+    app: web-db-pod
+
